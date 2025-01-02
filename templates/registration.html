@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login page</title>
+    <title>Registration page</title>
 </head>
-<body bgcolor="pink" action="/">
-    <h1 align="center">Login Page</h1><br>
+<body bgcolor="sky blue" action="/register" method="post">
+    <h1 align="center">Registration Page</h1><br>
 
-    {% if message %}
-        <p style="color:navy;" style="size: 5cm;">{{message}}</p>
+    {% if message%}
+        <p style="color: white; height: 12%;">{{message}}</p>
     {% endif %}
 
-    <form action="/perform_login" method="post">
+    <form action="/perform_register" method="post">
         <table>
-        
+            
+            <tr>
+                <td><label for="user_name">Name:</label></td>
+                <td><input type="text" name="user_name" required></td>
+            </tr>
             <tr>
                 <td><label for="user_email">E-mail:</label></td>
                 <td><input type="email" name="user_email" required></td>
@@ -25,12 +29,12 @@
             </tr>
             <tr>
                 <td>
-                    <input type="submit" value="login">
+                    <input type="submit" value="register">
                 </td>
             </tr>
         </table>
     </form>
 
-    <p>New User? <a href="/register">Register Now</a></p>
+    <p> Already Register <a href="/">login</a></p>
 </body>
 </html>
